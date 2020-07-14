@@ -8,6 +8,6 @@ namespace MvcWebUI.Models
 {
     public class ProductListViewModel
     {
-        public List<Product> products { get; set; }
+        public List<Product> Products { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace MvcWebUI.Models
 {
     public class CategoryListViewModel
     {
-        public List<Category> categories { get; set; }
-        public int currentCategoryId { get; set; }
+        public List<Category> Categories { get; set; }
+        public int CurrentCategoryId { get; set; }
     }
 }

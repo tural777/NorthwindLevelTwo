@@ -21,7 +21,7 @@ namespace MvcWebUI.Controllers
         {
             var model = new ProductListViewModel
             {
-                products = categoryId > 0 ? _productService.GetByCategory(categoryId) : _productService.GetAll()
+                Products = categoryId > 0 ? _productService.GetByCategory(categoryId) : _productService.GetAll()
             };
 
             return View(model);
