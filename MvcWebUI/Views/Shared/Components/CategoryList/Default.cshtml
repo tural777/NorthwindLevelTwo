@@ -2,9 +2,28 @@
 
 <h1>Category List</h1>
 
-<ul class="list-group">
+
+<div class="list-group">
+
+
+    @if (Model.currentCategoryId == 0)
+    {
+        <a href="/product/index" class="list-group-item active">All</a>
+    }
+    else
+    {
+        <a href="/product/index" class="list-group-item">All</a>
+    }
+
     @foreach (var category in Model.categories)
     {
-        <li class="list-group-item">@category.CategoryName</li>
+
+        var css = "list-group-item";
+
+        if (category.CategoryID == Model.currentCategoryId)
+        {
+            css += " active";
+        }
+        <a href="/product/index/?categoryId=@category.CategoryID" class="@css">@category.CategoryName</a>
     }
-</ul>
+</div>
