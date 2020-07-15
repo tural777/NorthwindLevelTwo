@@ -15,6 +15,7 @@
             <td>@product.QuantityPerUnit</td>
             <td>@product.UnitPrice</td>
             <td>@product.UnitsInStock</td>
+            <td><a class="btn btn-success btn-sm" asp-controller="Cart" asp-action="AddToCart" asp-route-productId="@product.ProductID"> Add To Cart </a></td>
         </tr>
     }
 </table>

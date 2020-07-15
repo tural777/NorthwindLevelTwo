@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MvcWebUI.Helpers;
 
 namespace MvcWebUI
 {
@@ -32,9 +33,12 @@ namespace MvcWebUI
             services.AddSingleton<IProductDal, EfProductDal>();
             services.AddSingleton<ICategoryService, CategroyManager>();
             services.AddSingleton<ICategoryDal, EfCategoryDal>();
-            services.AddScoped<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<ICartSessionHelper, CartSessionHelper>();
+            services.AddScoped<ICartService, CartManager>();
 
             services.AddControllersWithViews();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +60,8 @@ namespace MvcWebUI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
