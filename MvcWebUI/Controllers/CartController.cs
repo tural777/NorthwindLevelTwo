@@ -57,7 +57,7 @@ namespace MvcWebUI.Controllers
 
             _cartSessionHelper.SetCart("cart", cart);
 
-            return RedirectToAction("Index", "Product");
+            return RedirectToAction("Index", "Cart");
         }
 
     }
