@@ -8,6 +8,7 @@ using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,6 +32,7 @@ namespace MvcWebUI
             services.AddSingleton<IProductDal, EfProductDal>();
             services.AddSingleton<ICategoryService, CategroyManager>();
             services.AddSingleton<ICategoryDal, EfCategoryDal>();
+            services.AddScoped<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddControllersWithViews();
         }
