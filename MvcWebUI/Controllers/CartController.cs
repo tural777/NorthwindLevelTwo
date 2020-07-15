@@ -3,6 +3,7 @@ using Entities.Concrete;
 using Entities.DomainModels;
 using Microsoft.AspNetCore.Mvc;
 using MvcWebUI.Helpers;
+using MvcWebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,16 @@ namespace MvcWebUI.Controllers
             _cartService = cartService;
             _cartSessionHelper = cartSessionHelper;
             _productService = productService;
+        }
+
+        public IActionResult Index()
+        {
+            var model = new CartListViewModel
+            {
+                Cart = _cartSessionHelper.GetCart("cart")
+            };
+
+            return View(model);
         }
 
         public IActionResult AddToCart(int productId)
