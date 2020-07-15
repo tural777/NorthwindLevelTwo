@@ -24,6 +24,8 @@ namespace MvcWebUI.Controllers
             _productService = productService;
         }
 
+
+        [HttpGet]
         public IActionResult Index()
         {
             var model = new CartListViewModel
@@ -34,6 +36,8 @@ namespace MvcWebUI.Controllers
             return View(model);
         }
 
+
+        [HttpGet]
         public IActionResult AddToCart(int productId)
         {
             Product product = _productService.GetById(productId);
@@ -49,6 +53,8 @@ namespace MvcWebUI.Controllers
             return RedirectToAction("Index", "Product");
         }
 
+
+        [HttpGet]
         public IActionResult RemoveFromCart(int productId)
         {
             Product product = _productService.GetById(productId);
@@ -64,5 +70,25 @@ namespace MvcWebUI.Controllers
             return RedirectToAction("Index", "Cart");
         }
 
+
+        [HttpGet]
+        public IActionResult Complete()
+        {
+            var model = new ShippingDetailsViewModel
+            {
+                ShippingDetail = new ShippingDetail()
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Complete(ShippingDetail shippingDetail)
+        {
+            TempData.Add("message", "Successfully completed");
+            _cartSessionHelper.Clear();
+
+            return RedirectToAction("Index");
+        }
     }
 }
