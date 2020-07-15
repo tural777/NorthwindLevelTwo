@@ -2,29 +2,38 @@
 
 <h1>Cart List</h1>
 
-<table class="table table-responsive">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>ProductName</th>
-            <th>QuantityPerUnit</th>
-            <th>UnitPrice</th>
-            <th>UnitsInStock</th>
-            <th>Quantity</th>
-        </tr>
-    </thead>
-    @foreach (var cartLines in Model.Cart.CartLines)
-    {
-        <tbody>
+@if (Model.Cart.CartLines.Count == 0)
+{
+    <h2 class="badge badge-info badge-pill p-1">Empty</h2>
+}
+else
+{
+
+    <table class="table table-responsive">
+        <thead>
             <tr>
-                <td>@cartLines.Product.ProductID</td>
-                <td>@cartLines.Product.ProductName</td>
-                <td>@cartLines.Product.QuantityPerUnit</td>
-                <td>@cartLines.Product.UnitPrice</td>
-                <td>@cartLines.Product.UnitsInStock</td>
-                <td>@cartLines.Quantity</td>
-                <td><a class="btn btn-danger btn-sm" asp-controller="Cart" asp-action="RemoveFromCart" asp-route-productId="@cartLines.Product.ProductID">Remove From Cart </a></td>
+                <th>Id</th>
+                <th>ProductName</th>
+                <th>QuantityPerUnit</th>
+                <th>UnitPrice</th>
+                <th>UnitsInStock</th>
+                <th>Quantity</th>
             </tr>
-        </tbody>
-    }
-</table>
+        </thead>
+        @foreach (var cartLines in Model.Cart.CartLines)
+        {
+            <tbody>
+                <tr>
+                    <td>@cartLines.Product.ProductID</td>
+                    <td>@cartLines.Product.ProductName</td>
+                    <td>@cartLines.Product.QuantityPerUnit</td>
+                    <td>@cartLines.Product.UnitPrice</td>
+                    <td>@cartLines.Product.UnitsInStock</td>
+                    <td>@cartLines.Quantity</td>
+                    <td><a class="btn btn-danger btn-sm" asp-controller="Cart" asp-action="RemoveFromCart" asp-route-productId="@cartLines.Product.ProductID">Remove From Cart </a></td>
+                </tr>
+            </tbody>
+        }
+    </table>
+
+}

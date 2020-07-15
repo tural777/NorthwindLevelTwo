@@ -36,6 +36,12 @@
                     @await Component.InvokeAsync("CategoryList")
                 </div>
                 <div class="col-9">
+
+                    @if (TempData["message"] != null)
+                    {
+                        <div class="badge badge-info">@TempData["message"]</div>
+                    }
+
                     @RenderBody()
                 </div>
             </div>
