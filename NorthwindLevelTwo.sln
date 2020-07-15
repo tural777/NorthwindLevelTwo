@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{B6ECA982-5FFA-4065-BF7A-DCC17921CEF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{B6ECA982-5FFA-4065-BF7A-DCC17921CEF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{2D179801-8BC2-4C00-834A-28DE15D20027}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{2D179801-8BC2-4C00-834A-28DE15D20027}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{E1B87A75-F431-4884-9BE1-047CECA2D3DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{E1B87A75-F431-4884-9BE1-047CECA2D3DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcWebUI", "MvcWebUI\MvcWebUI.csproj", "{23AF3ED9-CDBF-4E81-A629-494BA7171162}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcWebUI", "MvcWebUI\MvcWebUI.csproj", "{23AF3ED9-CDBF-4E81-A629-494BA7171162}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{816837EB-95B0-4C9B-BF8A-BE93B5A4A9CA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{4EC91A7E-4CEB-4809-93E2-9B4D631B8454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{4EC91A7E-4CEB-4809-93E2-9B4D631B8454}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +35,6 @@ Global
 		{23AF3ED9-CDBF-4E81-A629-494BA7171162}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23AF3ED9-CDBF-4E81-A629-494BA7171162}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23AF3ED9-CDBF-4E81-A629-494BA7171162}.Release|Any CPU.Build.0 = Release|Any CPU
-		{816837EB-95B0-4C9B-BF8A-BE93B5A4A9CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{816837EB-95B0-4C9B-BF8A-BE93B5A4A9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{816837EB-95B0-4C9B-BF8A-BE93B5A4A9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{816837EB-95B0-4C9B-BF8A-BE93B5A4A9CA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4EC91A7E-4CEB-4809-93E2-9B4D631B8454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4EC91A7E-4CEB-4809-93E2-9B4D631B8454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EC91A7E-4CEB-4809-93E2-9B4D631B8454}.Release|Any CPU.ActiveCfg = Release|Any CPU
