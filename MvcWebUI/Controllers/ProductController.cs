@@ -10,7 +10,7 @@ namespace MvcWebUI.Controllers
 {
     public class ProductController : Controller
     {
-        private IProductService _productService;
+        readonly private IProductService _productService;
 
         public ProductController(IProductService productService)
         {

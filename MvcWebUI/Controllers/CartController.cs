@@ -13,9 +13,9 @@ namespace MvcWebUI.Controllers
 {
     public class CartController : Controller
     {
-        private ICartService _cartService;
-        private ICartSessionHelper _cartSessionHelper;
-        private IProductService _productService;
+        readonly private ICartService _cartService;
+        readonly private ICartSessionHelper _cartSessionHelper;
+        readonly private IProductService _productService;
 
         public CartController(ICartService cartService, ICartSessionHelper cartSessionHelper, IProductService productService)
         {
@@ -85,6 +85,10 @@ namespace MvcWebUI.Controllers
         [HttpPost]
         public IActionResult Complete(ShippingDetail shippingDetail)
         {
+            if (!ModelState.IsValid)
+                return View();
+
+
             TempData.Add("message", "Successfully completed");
             _cartSessionHelper.Clear();
 

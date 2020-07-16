@@ -11,7 +11,7 @@ namespace MvcWebUI.ViewComponents
 {
     public class CategoryListViewComponent : ViewComponent
     {
-        private ICategoryService _categoryService;
+        readonly private ICategoryService _categoryService;
 
         public CategoryListViewComponent(ICategoryService categoryService)
         {

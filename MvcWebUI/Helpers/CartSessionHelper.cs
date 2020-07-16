@@ -10,7 +10,7 @@ namespace MvcWebUI.Helpers
 {
     public class CartSessionHelper : ICartSessionHelper
     {
-        private IHttpContextAccessor _httpContextAccessor;
+        readonly private IHttpContextAccessor _httpContextAccessor;
 
         public CartSessionHelper(IHttpContextAccessor httpContextAccessor)
         {

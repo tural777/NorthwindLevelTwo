@@ -9,7 +9,7 @@ namespace Business.Concrete
 {
     public class ProductManager : IProductService
     {
-        private IProductDal _productDal;
+        readonly private IProductDal _productDal;
 
         public ProductManager(IProductDal productDal)
         {
