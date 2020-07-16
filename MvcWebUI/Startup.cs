@@ -6,6 +6,8 @@ using Business.Abstract;
 using Business.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -14,6 +16,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MvcWebUI.Helpers;
+using MvcWebUI.Models;
+using MvcWebUI.ValidationRules.FluentValidation;
 
 namespace MvcWebUI
 {
@@ -37,7 +41,9 @@ namespace MvcWebUI
             services.AddScoped<ICartSessionHelper, CartSessionHelper>();
             services.AddScoped<ICartService, CartManager>();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ShippingDetailValidator>());
+
             services.AddSession();
         }
 
